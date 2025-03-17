@@ -13,4 +13,118 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--basic-font-family);
+  font-variation-settings: 'wght' var(--font-weight-regular);
+}
+
+/* header */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  block-size: 100vh;
+  margin: 100px auto;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+}
+
+.section {
+  inline-size: clamp(375px, 100%, 700px);
+  max-block-size: 368px;
+}
+
+@media (width <= 375px) {
+  .section {
+    inline-size: 100%;
+    max-block-size: 327px;
+  }
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  /* margin-left: clamp(14px, 50vw, 120.5px);
+  margin-right: clamp(14px, 50vw, 120.5px); */
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  padding-right: ;
+}
+
+
+/* main */
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  inline-size: clamp(375px, 100%, 696px);
+  gap: 50px;
+  margin: 0 auto;
+
+}
+
+.content__list-item {
+  display: flex;
+
+}
+
+@media (width <= 375px) {
+  .content__list {
+    inline-size: 100%;
+  }
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  border: 2px solid #000000;
+  padding-inline-start: 10px;
+  padding-inline-end: clamp(10px, 2vw, 24px);
+}
+
+
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.card__content-container {
+  border: 2px solid #000000;
+  padding: 25px;
+}
+
+.card__text-container {
+  margin-block-end: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.button-decor {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.card__button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.card__like-button {
+  background-color: transparent;
+  inline-size: 130px;
+  block-size: 38px;
+  border: 2px solid #000000;
 }
