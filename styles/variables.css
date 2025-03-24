@@ -4,4 +4,8 @@
     --accent-font-family: 'PressStart2P', sans-serif;
     --font-weight-bold: 700;
     --font-weight-regular: 400;
+    --contour-color: #000000;
+    --accent-fill-color: #fff;
+    --animation-fill-color: #FF0000;
+    --hover-fill-color: #000000;
 }
