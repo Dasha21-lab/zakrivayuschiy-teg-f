@@ -34,16 +34,17 @@
   font-weight: var(--font-weight-regular);
   background-color: var(--basic-background-color);
   outline: var(--outline-header);
+  text-transform: uppercase;
 }
 
 .section {
-  inline-size: var(--font-size-desktop);
+  inline-size: var(--inline-size-desktop);
   max-block-size: 368px;
 }
 
 @media (width <= 375px) {
   .section {
-    inline-size: var(--font-size-mobile);
+    inline-size: var(--inline-size-mobile);
     max-block-size: 327px;
   }
 }
@@ -56,10 +57,7 @@
 .header__title {
   font-size: var(--header-font-size);
   line-height: 100%;
-  text-transform: uppercase;
 }
-
-/* main */
 
 .content__list {
   display: flex;
@@ -67,8 +65,6 @@
   gap: 50px;
   inline-size: var(--card-inline-size);
   margin: 0 auto;
-  background-color: transparent;
-
 }
 
 @media (width <= 375px) {
@@ -78,8 +74,6 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   background-color: #FFFFFF;
 }
 
@@ -103,6 +97,7 @@
   position: absolute;
   top: 25px;
   right: clamp(11px, 2.5vw, 25px);
+  z-index: 1;
   font-family: var(--accent-font-family);
   font-size: var(--dicor-font-size);
   font-weight: var(--font-weight-regular);
@@ -113,7 +108,6 @@
   color: var(--basic-color);
   mix-blend-mode: hard-light;
   opacity: 50%;
-  z-index: 1;
 }
 
 @supports ((text-stroke: 1px var(--text-shadow-color)) or (-webkit-text-stroke: 1px var(--text-shadow-color))) {
@@ -127,6 +121,7 @@
 .image {
   inline-size: 100%;
   block-size: 100%;
+  object-fit: cover;
 }
 
 .image-brightness {
@@ -174,6 +169,7 @@
 }
 
 .card__text {
+  font-variation-settings: 'wght' var(--font-weight-regular);
   font-size: var(--text-font-size);
   line-height: 21px;
 }
@@ -181,14 +177,16 @@
 .card__button-container {
   display: flex;
   justify-content: flex-end;
-  gap: 9px;
+  gap: 6px;
 }
 
 .card__icon-button {
-  padding-block-start: 7px;
-  padding-block-end: 3px;
-  inline-size: 38px;
+  display: flex;
+  align-items: center;
+  inline-size: 39px;
   block-size: 38px;
+  padding-block-start: 9px;
+  padding-block-end: 5px;
 }
 
 .card__icon-button:focus {
@@ -196,11 +194,12 @@
 }
 
 .card__icon-button:focus-visible {
-border: 2px solid #000;
-transition: border 0.3s ease;
+  border: var(--border-focus);
+  transition: border 0.3s ease;
 }
 
 .button-decor {
+  appearance: none;
   padding: 0;
   background: none;
   border: none;
@@ -215,21 +214,52 @@ transition: border 0.3s ease;
   min-block-size: 38px;
   border: var(--border-button);
 }
-/* переписала проверить */
 
+.move-button {
+  overflow: hidden;
+  position: relative;
+}
+
+.move-button:focus {
+  outline: none;
+}
+
+.move-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-focus);
+  transition: box-shadow 0.3s ease;
+}
+
+.move-button::before {
+  content: '';
+  position: absolute;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--animation-background-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
 
 .button__text {
+  position: relative;
+  z-index: 1;
   font-family: var(--accent-font-family);
   font-size: var(--button-font-size);
   line-height: 93%;
-  position: relative;
-  z-index: 1;
   mix-blend-mode: difference;
-  color: var(--animation-color);
   text-align: center;
+  color: var(--animation-color);
 }
 
-/* футер */
+.move-button:hover .button__text {
+  mix-blend-mode: difference;
+}
+
+.move-button:hover::before {
+  transform: scaleX(1);
+}
 
 .footer {
   display: flex;
@@ -246,11 +276,9 @@ transition: border 0.3s ease;
   align-items: center;
   gap: 8px;
   inline-size: clamp(306px, 50%, 335px);
-  border: var(--border-button);
-  background-color: var(--basic-background-color);
-  /* padding-inline-start: 17px;
-  padding-inline-end: 19px; */
   padding-block: 15px;
+  background-color: var(--basic-background-color);
+  border: var(--border-button);
 }
 
 @media (width <= 375px) {
@@ -260,8 +288,12 @@ transition: border 0.3s ease;
 }
 
 .floppy-icon {
+  position: relative;
+  z-index: 1;
   inline-size: 21px;
   block-size: 21px;
+  stroke: var(--animation-stroke-color);
+  mix-blend-mode: difference;
 }
 
 @media (width <= 375px) {
@@ -271,38 +303,35 @@ transition: border 0.3s ease;
   }
 }
 
-/* диалог */
-
-.modal__dialog [open] {
-  display: flex;
-  
+.modal__dialog {
+  padding: 0;
+  border: var(--border-button);
 }
 
-.modal__dialog {
-  border: var(--border-button);
-  padding: 0;
-  
+.modal__dialog[open] {
+  display: flex;
+}
+
+.modal__dialog[open]::backdrop {
+  background-color: var(--backdrop-background-color);
 }
 
 .modal__dialog-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 30px;
   max-inline-size: 357px;
   padding-inline: 30px;
   padding-block: 30px;
+  overflow: hidden;
 }
 
 @media (width <= 375px) {
   .modal__dialog-container {
     max-inline-size: 341px;
-    padding-inline: 45px;
   } 
-}
-
-.modal__dialog[open]::backdrop {
-  background-color: var(--backdrop-background-color);
 }
 
 .modal__content-container {
@@ -311,7 +340,6 @@ transition: border 0.3s ease;
   align-items: center;
   gap: 20px;
   inline-size: clamp(257px, 50vw, 293px);
- 
 }
 
 .modal__floppy-icon {
@@ -332,51 +360,7 @@ transition: border 0.3s ease;
   justify-content: center;
   align-items: center;
   inline-size: clamp(257px, 50vw, 293px);
+  min-block-size: 38px;
   border: var(--border-button);
   text-transform: uppercase;
-  min-block-size: 38px;
 }
-
-/* проверить */
-
-.move-button {
-  overflow: hidden;
-  position: relative;
-}
-
-.move-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0 #000000;
-  transition: box-shadow 0.3s ease;
-}
-
-.move-button::before {
-  content: '';
-  position: absolute;
-  display: block;
-  inline-size: 100%;
-  block-size: 100%;
-  transition: transform 0.5s ease-in-out;
-  background-color: var(--animation-background-color);
-  transform-origin: left;
-  transform: scaleX(0);
-}
-
-.move-button:hover .button__text {
-  mix-blend-mode: difference;
-}
-
-.move-button:hover::before {
-  transform: scaleX(1);
-}
-
-.floppy-icon {
-  position: relative;
-  z-index: 1;
-    fill: #000;
-    stroke: #FFFFFF;
-    mix-blend-mode: difference;
-  }
-
-
-
