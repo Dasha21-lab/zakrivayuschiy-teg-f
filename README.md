@@ -1,1 +1,1 @@
-https://github.com/Dasha21-lab/zakrivayuschiy-teg-f
+https://dasha21-lab.github.io/zakrivayuschiy-teg-f/
