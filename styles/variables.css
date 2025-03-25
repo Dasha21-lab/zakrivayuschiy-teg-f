@@ -5,7 +5,46 @@
     --font-weight-bold: 700;
     --font-weight-regular: 400;
     --contour-color: #000000;
-    --accent-fill-color: #fff;
+    --accent-fill-color: #FFFFFF;
     --animation-fill-color: #FF0000;
     --hover-fill-color: #000000;
+    --font-size-desktop: clamp(375px, 100%, 700px);
+    --font-size-mobile: 100%;
+    --outline-header: 2px solid #000;
+    --outline-main: 2px solid #000;
+    --basic-background-color: #FFFFFF;
+    --header-font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+    --logo-font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+    --border-button: 2px solid #000;
+    --background-image-gradient: 
+                                repeating-linear-gradient(
+                                    to right,
+                                    #d3d3d3 0px 2px,
+                                    rgba(0, 0, 0, 0) 2px 4px
+                                ),
+
+                                repeating-linear-gradient(
+                                    to bottom,
+                                    #d3d3d3 0px 2px,
+                                    rgba(0, 0, 0, 0) 2px 4px
+                                ),
+                            
+                                linear-gradient(
+                                    to bottom,
+                                    #e7e7e7 0.01%,
+                                    #1a1a1a 100%
+                                );
+--card-inline-size: clamp(375px, 100%, 696px);
+--title-font-size: 18px;
+--text-font-size: 18px;
+--button-font-size: 14px;
+--dicor-font-size: 14px;
+--text-shadow-color: #FFFFFF;
+--basic-color: #000000;
+--backdrop-background-color: rgb(0 0 0 / 75%);
+--modal-text-font-size: 14px;
+--animation-background-color:#000000;
+--animation-color: #FFFFFF;
+--icon-fill-color: #FFFFFF;
+--border-focus: 2px solid #000;
 }
