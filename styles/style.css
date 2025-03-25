@@ -14,13 +14,11 @@
   min-block-size: 100dvb;
   font-family: var(--basic-font-family);
   font-variation-settings: 'wght' var(--font-weight-regular);
-  background-image: var(--background-image-gradient); 
+  background-image: var(--background-image-gradient);
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--basic-background-color);
 }
-
-/* header */
 
 .header {
   display: flex;
@@ -150,7 +148,7 @@
 
 .image-multiple {
   filter: saturate(678%) hue-rotate(-90deg);
-} 
+}
 
 .image-invert {
   filter: invert(0.7);
@@ -331,7 +329,7 @@
 @media (width <= 375px) {
   .modal__dialog-container {
     max-inline-size: 341px;
-  } 
+  }
 }
 
 .modal__content-container {

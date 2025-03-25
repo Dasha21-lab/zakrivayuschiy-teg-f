@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --background-image-gradient: 
+  --background-image-gradient:
     repeating-linear-gradient(
         to right,
         #d3d3d3 0px 2px,
@@ -28,9 +28,9 @@
   --animation-stroke-color: #FFFFFF;
   --contour-color: #000000;
   --text-shadow-color: #FFFFFF;
-  --color-focus:#000000;
+  --color-focus: #000000;
   --basic-font-family: 'Inter', sans-serif;
-  --accent-font-family: 'PressStart2P', sans-serif; 
+  --accent-font-family: 'PressStart2P', sans-serif;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
   --header-font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
@@ -40,11 +40,11 @@
   --card-inline-size: clamp(375px, 100%, 696px);
   --title-font-size: 18px;
   --text-font-size: 18px;
-  --button-font-size: 14px; 
+  --button-font-size: 14px;
   --dicor-font-size: 14px;
   --modal-text-font-size: 14px;
   --outline-header: 2px solid #000;
-  --outline-main: 2px solid #000; 
-  --border-button: 2px solid #000; 
+  --outline-main: 2px solid #000;
+  --border-button: 2px solid #000;
   --border-focus: 2px solid #000;
 }
