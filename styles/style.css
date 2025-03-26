@@ -25,9 +25,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  block-size: 100vh;
   gap: 20px;
   margin: 100px auto;
+  padding-block: 130px;
   font-family: var(--accent-font-family);
   font-weight: var(--font-weight-regular);
   background-color: var(--basic-background-color);
@@ -37,13 +37,12 @@
 
 .section {
   inline-size: var(--inline-size-desktop);
-  max-block-size: 368px;
 }
 
 @media (width <= 375px) {
   .section {
     inline-size: var(--inline-size-mobile);
-    max-block-size: 327px;
+    padding-block: 122px;
   }
 }
 
@@ -120,6 +119,7 @@
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .image-brightness {
@@ -185,6 +185,7 @@
   block-size: 38px;
   padding-block-start: 9px;
   padding-block-end: 5px;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -193,7 +194,6 @@
 
 .card__icon-button:focus-visible {
   border: var(--border-focus);
-  transition: border 0.3s ease;
 }
 
 .button-decor {
@@ -216,6 +216,7 @@
 .move-button {
   overflow: hidden;
   position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .move-button:focus {
@@ -225,7 +226,6 @@
 .move-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--color-focus);
-  transition: box-shadow 0.3s ease;
 }
 
 .move-button::before {
@@ -259,21 +259,13 @@
   transform: scaleX(1);
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin: 0 auto;
-  padding-block-start: 50px;
-  padding-block-end: 103px;
-}
-
 .dialog_button {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   inline-size: clamp(306px, 50%, 335px);
+  margin: 50px auto 100px;
   padding-block: 15px;
   background-color: var(--basic-background-color);
   border: var(--border-button);
@@ -290,7 +282,7 @@
   z-index: 1;
   inline-size: 21px;
   block-size: 21px;
-  stroke: var(--animation-stroke-color);
+  color: var(--animation-color);
   mix-blend-mode: difference;
 }
 

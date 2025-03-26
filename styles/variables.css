@@ -25,12 +25,11 @@
   --hover-fill-color: #000000;
   --icon-fill-color: #FFFFFF;
   --animation-color: #FFFFFF;
-  --animation-stroke-color: #FFFFFF;
   --contour-color: #000000;
   --text-shadow-color: #FFFFFF;
   --color-focus: #000000;
   --basic-font-family: 'Inter', sans-serif;
-  --accent-font-family: 'PressStart2P', sans-serif;
+  --accent-font-family: 'PressStart2P', fantasy;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
   --header-font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
